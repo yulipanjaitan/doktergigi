@@ -37,8 +37,8 @@
         }
 
         @keyframes scrollBounce {
-            0%, 100% { transform: translateY(0); opacity: 0.8; }
-            50% { transform: translateY(8px); opacity: 1; }
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+            50% { transform: translateY(8px) rotate(0deg); opacity: 1; }
         }
 
         @keyframes floatSlow {
@@ -70,6 +70,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            width: 100%;
         }
 
         nav ul {
@@ -131,7 +133,7 @@
             z-index: 2;
         }
 
-        /* LAYER POLKADOT JELI BERNYAWA (SUPER BANYAK - 14 BUAH) */
+        /* LAYER POLKADOT */
         .dot {
             position: absolute;
             border-radius: 50%;
@@ -397,7 +399,7 @@
             color: white;
         }
 
-        /* MODAL POPUP PANDUAN */
+        /* MODAL */
         .modal {
             display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%;
             background-color: rgba(26, 59, 139, 0.6); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 20px;
@@ -415,7 +417,7 @@
         .step-text p { font-size: 12.5px; color: #666; }
         blockquote { background: #f4f8fb; border-left: 3px solid #4a90e2; padding: 8px 12px; margin-top: 6px; font-size: 11.5px; color: #333; }
 
-        /* FOOTER DEEP NAVY */
+        /* FOOTER */
         footer {
             background-color: #102252;
             color: #cbd5e1;
@@ -452,34 +454,58 @@
             font-size: 11.5px;
         }
 
+        /* REVISI MEDIA QUERIES MOBILE: LOGO TENGAH, HAMBURGER SISI KANAN */
         @media (max-width: 992px) {
-            header { padding: 15px 5%; }
-            .menu-toggle { display: block !important; }
+            header { padding: 15px 20px; }
+            
+            nav {
+                display: block; /* Mengizinkan penataan blok independen */
+                text-align: center;
+            }
+
+            /* FIX HAMBURGER: Dipaksa Mengunci Mutlak Di Sisi Kanan Atas HP */
+            .menu-toggle { 
+                display: block !important; 
+                position: absolute; 
+                right: 10px; 
+                top: 0px; 
+                transform: translateY(0);
+                z-index: 1010;
+            }
+            
+            /* FIX LOGO: Selalu Terkunci Sempurna Di Tengah-Tengah HP */
+            .logo-center-item { 
+                display: inline-flex !important;
+                margin: 0 auto !important;
+                justify-content: center;
+                text-align: center;
+            }
+
             nav ul { 
                 display: none; 
                 flex-direction: column; 
                 position: absolute; 
-                top: 100%; left: 0; width: 100%; 
+                top: 45px; left: -20px; width: calc(100% + 40px); 
                 background: #ffffff; padding: 20px; 
                 box-shadow: 0 10px 15px rgba(0,0,0,0.05); 
                 gap: 12px;
+                text-align: center;
             }
             nav ul.active { display: flex; }
             nav ul li { margin: 0; justify-content: center; }
-            .logo-center-item { order: -1; margin-bottom: 10px; }
+            nav ul li:nth-child(3) { display: none !important; } /* Sembunyikan duplikasi logo di dalam list dropdown hp */
+
             .hero-text h1 { font-size: 34px; }
             .hero-text .cursive-title { font-size: 28px; }
             .services-diagonal-container { clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%); padding: 100px 5% 60px 5%; }
             .services-horizontal-layout { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .services-horizontal-layout .service-item-block p { margin: 0 auto; }
             .footer-container { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Polkadot Latar Belakang Aktif Muncul -->
     <div class="dot dot-b1"></div>
     <div class="dot dot-b2"></div>
     <div class="dot dot-b3"></div>
@@ -529,7 +555,6 @@
 
     <section class="services-diagonal-container">
         <div class="services-horizontal-layout">
-            
             <div class="service-column-box">
                 <div class="service-item-block">
                     <h2>Penambalan Estetik</h2>
@@ -540,7 +565,6 @@
                     <p>Pembersihan karang gigi secara menyeluruh menggunakan teknologi ultrasonic scaler guna menghindari risiko radang gusi, infeksi periodontal, dan bau mulut.</p>
                 </div>
             </div>
-            
             <div class="service-column-box">
                 <div class="service-item-block">
                     <h2>Esthetic Bleaching</h2>
@@ -551,7 +575,6 @@
                     <p>Solusi perawatan endodontik komprehensif untuk merawat dan menyelamatkan struktur gigi alami yang telah mengalami infeksi pulpa atau pembentukan abses dalam.</p>
                 </div>
             </div>
-            
         </div>
     </section>
 
