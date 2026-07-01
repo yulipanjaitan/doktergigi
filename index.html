@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - drg. Yuli Kartilla Panjaitan</title>
+    
+    <!-- SEO & Social Media Share Meta Tags -->
+    <meta name="description" content="Layanan konsultasi dan perawatan gigi profesional drg. Yuli Kartilla Panjaitan di Batam (Lanera Dental Care & TP Dental).">
+    <meta property="og:title" content="drg. Yuli Kartilla Panjaitan - Dokter Gigi Batam">
+    <meta property="og:description" content="Healthy Teeth, Beautiful Smile. Layanan dental modern terbaik di Kota Batam.">
+    <meta property="og:type" content="website">
+    
+    <!-- FAVICON: Data URI SVG Gigi Hijau Mint -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231e293b' d='M416 112c-35.3 0-64 28.7-64 64v51.2c0 23.4-12.2 44.9-32.3 56.8L272 312.6l-47.7-28.6c-20.1-12-32.3-33.5-32.3-56.8V176c0-35.3-28.7-64-64-64S64 140.7 64 176c0 86.8 52.3 162.7 128 193.3V432c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V369.3c75.7-30.6 128-106.5 128-193.3c0-35.3-28.7-64-64-64z'/%3E%3C/svg%3E">
+    <!-- Font Awesome & Google Fonts (Poppins & Inter untuk kesan clean dan tipis) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #1e293b;
+            overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        /* 1. TOP UTILITY BAR (Sesuai Gambar Referensi) */
+        .top-bar {
+            background-color: #1a2b49;
+            color: #ffffff;
+            padding: 10px 8%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            font-size: 13px;
+        }
+        .top-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .top-bar a:hover {
+            opacity: 0.8;
+        }
+
+        /* 2. MAIN HEADER & NAVIGATION */
+        header {
+            background: #ffffff;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: #1a2b49;
+        }
+        .logo .main-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            line-height: 1.1;
+        }
+        .logo .sub-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #64748b;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #1a2b49;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            color: #475569;
+        }
+
+        /* Tombol Kotak Solid di Kanan Header */
+        .btn-header-contact {
+            background-color: #1a2b49;
+            color: #ffffff;
+            padding: 12px 24px;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .btn-header-contact:hover {
+            background-color: #243b61;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #1a2b49;
+        }
+
+        /* 3. EDGE-TO-EDGE HERO BANNER (Sesuai Gambar Referensi) */
+        .hero-banner-container {
+            width: 100%;
+            height: 550px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f8fafc;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        /* 4. HERO TEXT SECTION BELOW IMAGE (Sesuai Gambar Referensi) */
+        .hero-text-section {
+            padding: 60px 8% 80px 8%;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .hero-text-section h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 64px;
+            color: #1a2b49;
+            font-weight: 400;
+            letter-spacing: -1px;
+            margin-bottom: 40px;
+        }
+        .hero-text-section p {
+            max-width: 800px;
+            margin: -20px auto 40px auto;
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        /* Kotak Tegap di Tengah Bawah */
+        .btn-appointment {
+            display: inline-block;
+            background-color: #1a2b49;
+            color: #ffffff;
+            padding: 14px 35px;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-appointment:hover {
+            background-color: #243b61;
+        }
+
+        /* SECTION: Services & Grid */
+        .services-section {
+            padding: 80px 8%;
+            background: #f8fafc;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            color: #1a2b49;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .section-subtitle {
+            font-size: 13px;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-bottom: 50px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 0px; /* Desain kotak minimalis tegap */
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: left;
+        }
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .service-icon {
+            font-size: 28px;
+            color: #1a2b49;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 16px;
+            color: #1a2b49;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .service-card p {
+            font-size: 13.5px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* SECTION: Locations & Schedules */
+        .locations-section {
+            padding: 80px 8%;
+            background: #ffffff;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .location-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .location-icon {
+            font-size: 28px;
+            color: #1a2b49;
+            margin-bottom: 20px;
+        }
+        .location-card h3 {
+            font-size: 18px;
+            color: #1a2b49;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .location-card h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .location-card .address-text {
+            font-size: 13.5px;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .card-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        .card-btn {
+            padding: 10px 20px;
+            background-color: #1a2b49;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 0px;
+            transition: background-color 0.2s;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+        }
+        .card-btn:hover {
+            background-color: #243b61;
+        }
+        .card-btn.maps-btn {
+            background-color: transparent;
+            border: 1px solid #1a2b49;
+            color: #1a2b49;
+        }
+        .card-btn.maps-btn:hover {
+            background-color: #1a2b49;
+            color: #ffffff;
+        }
+
+        /* MODAL POPUP PANDUAN */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 43, 73, 0.6);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(2px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 0px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            border: 1px solid #1a2b49;
+        }
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 32px;
+            color: #94a3b8;
+            cursor: pointer;
+        }
+        .modal h2 {
+            font-size: 20px;
+            color: #1a2b49;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        .modal-step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        .step-number {
+            background-color: #1a2b49;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .step-text h4 {
+            font-size: 14px;
+            color: #1a2b49;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .step-text p {
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        .step-text blockquote {
+            background-color: #f8fafc;
+            border-left: 2px solid #1a2b49;
+            padding: 10px;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #1a2b49;
+        }
+
+        /* FOOTER REGION */
+        footer {
+            background-color: #111827;
+            color: #94a3b8;
+            padding: 60px 8% 30px 8%;
+            font-size: 14px;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        .footer-brand h3 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .footer-brand p {
+            line-height: 1.6;
+            font-size: 13px;
+        }
+        .footer-socials-link {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .footer-socials-link a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+        .footer-socials-link a:hover {
+            color: #ffffff;
+        }
+        .footer-links h4 {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+        .footer-links ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+        .footer-links ul li a:hover {
+            color: #ffffff;
+        }
+        .footer-bottom {
+            border-top: 1px solid #1f2937;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 12px;
+        }
+
+        /* RESPONSIVE DESIGN MOBILE */
+        @media (max-width: 992px) {
+            header {
+                padding: 20px 5%;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                border-bottom: 1px solid #e2e8f0;
+                gap: 15px;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .btn-header-contact {
+                display: none; /* Disembunyikan di navbar mobile untuk estetika clean */
+            }
+            .hero-banner-container {
+                height: 320px;
+            }
+            .hero-text-section h1 {
+                font-size: 38px;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. TOP UTILITY BAR -->
+    <div class="top-bar">
+        <a href="https://maps.google.com/?q=Lanera+Dental+Care+Batam" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+        <a href="tel:+628121646224"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://www.instagram.com/drg.yulipanjaitan/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+
+    <!-- 2. MAIN HEADER & NAVBAR -->
+    <header>
+        <a href="index.html" class="logo">
+            <span class="main-title">drg. YULI PANJAITAN</span>
+            <span class="sub-title">DENTAL CARE & SERVICES</span>
+        </a>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="#locations">Locations</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn-header-contact">Contact Us</a>
+    </header>
+
+    <!-- 3. EDGE-TO-EDGE HERO BANNER -->
+    <div class="hero-banner-container">
+        <!-- Anda bisa mengganti placeholder ini dengan gambar keluarga tersenyum atau interior klinik Anda -->
+        <div class="slide active" style="background-image: url('lanera-luar.jpg');"></div>
+        <div class="slide" style="background-image: url('lanera-interior.jpg');"></div>
+        <div class="slide" style="background-image: url('tp-dental-luar.jpg');"></div>
+    </div>
+
+    <!-- 4. HERO TEXT SECTION BELOW IMAGE -->
+    <section class="hero-text-section">
+        <h1>Live Life Smiling</h1>
+        <p>Selamat datang di platform konsultasi resmi drg. Yuli Kartilla Panjaitan[cite: 3]. Kami berkomitmen memberikan pelayanan dental modern terbaik dengan mengutamakan kenyamanan, keamanan, dan hasil yang estetis untuk kesehatan gigi dan mulut Anda[cite: 3].</p>
+        <button class="btn-appointment" onclick="toggleModal(true)">Request An Appointment</button>
+    </section>
+
+    <!-- SECTION: Services -->
+    <section class="services-section">
+        <h2 class="section-title">Layanan Medis & Dental</h2>
+        <div class="section-subtitle">Our Professional Services</div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-tooth service-icon"></i>
+                <h3>Penambalan Estetik</h3>
+                <p>Restorasi gigi berlubang menggunakan bahan komposit sewarna gigi dengan hasil presisi dan natural[cite: 3].</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-shield-halved service-icon"></i>
+                <h3>Dental Scaling</h3>
+                <p>Pembersihan karang gigi secara menyeluruh guna mencegah radang gusi dan masalah bau mulut[cite: 3].</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-wand-magic-sparkles service-icon"></i>
+                <h3>Esthetic Bleaching</h3>
+                <p>Mencerahkan warna gigi secara aman dan efektif untuk senyum putih alami yang lebih percaya diri[cite: 3].</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-heart-pulse service-icon"></i>
+                <h3>Perawatan Saluran Akar</h3>
+                <p>Solusi komprehensif untuk menyelamatkan gigi yang mengalami infeksi atau kerusakan struktural dalam[cite: 3].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Locations & Schedules -->
+    <section class="locations-section" id="locations">
+        <h2 class="section-title">Locations & Schedules</h2>
+        <div class="section-subtitle">Practice Locations & Contact Info</div>
+        <div class="locations-grid">
+            
+            <div class="location-card">
+                <div>
+                    <i class="fa-solid fa-hospital-user location-icon"></i>
+                    <h3>Lanera Dental Care</h3>
+                    <h4>Senin – Sabtu: 10.00 – 16.00 WIB[cite: 3]</h4>
+                    <p class="address-text"><strong>Cabang KBC:</strong> Ruko KBC Blok A3 No. 3 Batam Center, Belian, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29464[cite: 3]</p>
+                    <p class="address-text"><strong>Cabang Mitra Raya:</strong> Komplek No.3 Blok A, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461[cite: 3]</p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn" onclick="openWhatsApp('628121646224', 'Halo Lanera Dental Care, saya ingin membuat janji temu dengan drg. Yuli.')">Admin 1</button>
+                    <button class="card-btn" onclick="openWhatsApp('6281225776161', 'Halo Lanera Dental Care, saya ingin bertanya tentang jadwal drg. Yuli.')">Admin 2</button>
+                    <button class="card-btn maps-btn" onclick="window.open('https://maps.google.com/?q=Lanera+Dental+Care+Batam', '_blank')">Maps KBC</button>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <div>
+                    <i class="fa-solid fa-house-medical-flag location-icon"></i>
+                    <h3>TP Dental</h3>
+                    <h4>Senin – Sabtu: 16.00 – 18.30 WIB[cite: 3]</h4>
+                    <p class="address-text"><strong>Alamat:</strong> Jl. Komp. Bumi Indah Blk. D No. 6, Lubuk Baja Kota, Kec. Lubuk Baja, Kota Batam, Kepulauan Riau 29444 (Belakang Bank BRI)[cite: 3]</p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn" onclick="openWhatsApp('6281373091545', 'Halo TP Dental, saya ingin menjadwalkan kunjungan ke drg. Yuli sore ini.')">Chat Admin</button>
+                    <button class="card-btn maps-btn" onclick="window.open('https://maps.google.com/?q=TP+Dental+Batam', '_blank')">Google Maps</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL POPUP PANDUAN -->
+    <div id="panduanModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleModal(false)">×</span>
+            <h2>Panduan Pendaftaran</h2>
+            <div class="modal-step-container">
+                <div class="modal-step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <h4>Pilih Lokasi & Jadwal Praktik</h4>
+                        <p>Tentukan klinik pilihan Anda berdasarkan lokasi terdekat serta jam operasional masuk drg. Yuli[cite: 3].</p>
+                    </div>
+                </div>
+                <div class="modal-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <h4>Hubungi Kontak Admin</h4>
+                        <p>Klik tombol Admin atau Chat Admin pada kartu klinik yang dipilih untuk langsung dialihkan ke ruang obrolan WhatsApp[cite: 3].</p>
+                    </div>
+                </div>
+                <div class="modal-step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <h4>Kirimkan Format Booking</h4>
+                        <p>Kirim data format reservasi otomatis demi mempercepat proses input jadwal masuk klinik[cite: 3].</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>drg. Yuli Kartilla Panjaitan</h3>
+                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam. Temukan senyum sehat dan rasa percaya diri Anda kembali melalui perawatan dental modern terbaik kami[cite: 3].</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved[cite: 3].</p>
+            <p style="font-size: 11px; color: #64748b;"><i class="fa-solid fa-user-shield"></i> Seluruh data format reservasi medis pasien dilindungi & bersifat rahasia[cite: 3].</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT CODES -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // Efek Transisi Halaman (App-like Smooth Fade Out)
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && !href.startsWith('#') && this.getAttribute('target') !== '_blank') {
+                    e.preventDefault();
+                    document.body.style.opacity = '0';
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 400);
+                }
+            });
+        });
+
+        function openWhatsApp(nomor, pesan) {
+            window.open(`https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`, '_blank');
+        }
+
+        function toggleModal(show) {
+            const modal = document.getElementById('panduanModal');
+            if (show) {
+                modal.style.display = 'flex';
+                setTimeout(() => modal.classList.add('show'), 10);
+            } else {
+                modal.classList.remove('show');
+                setTimeout(() => modal.style.display = 'none', 300);
+            }
+        }
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.addEventListener('click', () => {
+            document.getElementById('nav-list').classList.toggle('active');
+        });
+
+        // Hero Image Auto Slider Loop
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        function nextSlide() {
+            if (slides.length <= 1) return;
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        if (slides.length > 0) { setInterval(nextSlide, 5000); }
+    </script>
+</body>
+</html>
