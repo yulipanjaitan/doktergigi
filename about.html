@@ -25,7 +25,7 @@
             transition: opacity 0.4s ease-in-out; 
         }
         
-        /* HEADER LEBIH RAPAT */
+        /* HEADER NAVIGASI RAPAT */
         header {
             position: fixed; width: 100%; z-index: 1000; top: 0; left: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); border-bottom: 1px solid #f0f0f0; padding: 15px 5%;
         }
@@ -40,16 +40,23 @@
 
         .menu-toggle { display: none !important; font-size: 24px; cursor: pointer; color: #1a3b8b; }
 
-        /* FLOATING POLKADOT (DIPERBANYAK) */
-        .dot { position: absolute; border-radius: 50%; box-shadow: 0 6px 15px rgba(0,0,0,0.04); pointer-events: none; z-index: -1; }
-        .dot-blue-1 { width: 35px; height: 35px; background-color: #cbdcf2; top: 15%; left: 8%; animation: floatSlow 5s infinite ease-in-out; }
-        .dot-blue-2 { width: 22px; height: 22px; background-color: #4a90e2; top: 40%; left: 88%; opacity: 0.6; animation: floatFast 4s infinite ease-in-out; }
-        .dot-blue-3 { width: 14px; height: 14px; background-color: #1a3b8b; top: 70%; left: 5%; opacity: 0.4; animation: floatSlow 6s infinite ease-in-out; }
-        .dot-blue-4 { width: 26px; height: 26px; background-color: #cbdcf2; top: 65%; left: 82%; opacity: 0.5; animation: floatSlow 4.8s infinite ease-in-out; }
+        /* LAYER FLOATING POLKADOT (SUPER BANYAK - 14 BUAH) */
+        .dot { position: absolute; border-radius: 50%; box-shadow: 0 6px 15px rgba(0,0,0,0.04); pointer-events: none; z-index: 1; }
+        .dot-b1 { width: 35px; height: 35px; background-color: #cbdcf2; top: 15%; left: 8%; animation: floatSlow 5s infinite ease-in-out; }
+        .dot-b2 { width: 22px; height: 22px; background-color: #4a90e2; top: 40%; left: 88%; opacity: 0.6; animation: floatFast 4s infinite ease-in-out; }
+        .dot-b3 { width: 14px; height: 14px; background-color: #1a3b8b; top: 70%; left: 5%; opacity: 0.4; animation: floatSlow 6s infinite ease-in-out; }
+        .dot-b4 { width: 26px; height: 26px; background-color: #cbdcf2; top: 65%; left: 82%; opacity: 0.5; animation: floatSlow 4.8s infinite ease-in-out; }
+        .dot-b5 { width: 18px; height: 18px; background-color: #4a90e2; top: 22%; left: 68%; opacity: 0.4; animation: floatFast 5s infinite ease-in-out; }
+        .dot-b6 { width: 20px; height: 20px; background-color: #cbdcf2; top: 48%; left: 3%; opacity: 0.6; animation: floatSlow 5.6s infinite ease-in-out; }
+        .dot-b7 { width: 32px; height: 32px; background-color: #cbdcf2; top: 80%; left: 18%; opacity: 0.4; animation: floatSlow 6.2s infinite ease-in-out; }
         
-        .dot-pink-1 { width: 24px; height: 24px; background-color: #ff789e; top: 18%; left: 80%; animation: floatFast 4.5s infinite ease-in-out; }
-        .dot-pink-2 { width: 18px; height: 18px; background-color: #ff789e; top: 52%; left: 10%; animation: floatSlow 5.5s infinite ease-in-out; }
-        .dot-pink-3 { width: 16px; height: 16px; background-color: #ff789e; top: 32%; left: 74%; animation: floatFast 3.8s infinite ease-in-out; }
+        .dot-p1 { width: 24px; height: 24px; background-color: #ff789e; top: 18%; left: 80%; animation: floatFast 4.5s infinite ease-in-out; }
+        .dot-p2 { width: 18px; height: 18px; background-color: #ff789e; top: 52%; left: 12%; animation: floatSlow 5.5s infinite ease-in-out; }
+        .dot-p3 { width: 16px; height: 16px; background-color: #ff789e; top: 32%; left: 74%; animation: floatFast 3.8s infinite ease-in-out; }
+        .dot-p4 { width: 20px; height: 20px; background-color: #ff789e; top: 68%; left: 24%; animation: floatSlow 6s infinite ease-in-out; }
+        .dot-p5 { width: 13px; height: 13px; background-color: #ff789e; top: 60%; left: 94%; animation: floatFast 4.2s infinite ease-in-out; }
+        .dot-p6 { width: 22px; height: 22px; background-color: #ff789e; top: 10%; left: 38%; opacity: 0.5; animation: floatSlow 4.9s infinite ease-in-out; }
+        .dot-p7 { width: 15px; height: 15px; background-color: #ff789e; top: 82%; left: 52%; opacity: 0.5; animation: floatFast 3.4s infinite ease-in-out; }
 
         @keyframes floatSlow { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(10deg); } }
         @keyframes floatFast { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-25px) rotate(-15deg); } }
@@ -58,11 +65,12 @@
         .about-container-vertical { 
             max-width: 1100px; 
             margin: 0 auto; 
-            padding: 180px 20px 80px 20px; 
+            padding: 180px 20px 0 20px; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             position: relative;
+            z-index: 2;
         }
 
         .profile-header-block { text-align: center; margin-bottom: 30px; }
@@ -77,8 +85,8 @@
         .btn-portfolio { display: inline-flex; align-items: center; gap: 8px; background-color: #1a3b8b; color: white; padding: 11px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 13px; margin-bottom: 60px; }
         .btn-portfolio:hover { background-color: #4a90e2; }
 
-        /* KEAHLIAN & LAYANAN MEDIS SECTION (HORIZONTAL GRID) */
-        .skills-section-wrapper { width: 100%; margin-bottom: 80px; }
+        /* 8 KEAHLIAN WRAPPER */
+        .skills-section-wrapper { width: 100%; margin-bottom: 40px; }
         .skills-title-main { font-size: 20px; color: #1a3b8b; font-weight: 800; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
         .skills-title-main::after { content: ""; flex-grow: 1; height: 2px; background-color: #f0f4f8; }
         
@@ -86,57 +94,74 @@
         .skill-card-box { background: #ffffff; padding: 22px 16px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid #eef2f6; transition: all 0.3s ease; }
         .skill-card-box:hover { border-color: #4a90e2; transform: translateY(-3px); }
         .skill-card-icon { font-size: 22px; color: #4a90e2; margin-bottom: 10px; }
-        .skill-card-box h4 { font-size: 14px; color: #1a3b8b; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
-        .skill-card-box p { font-size: 11.5px; color: #666; line-height: 1.6; }
+        .skill-card-box h4 { font-size: 14px; color: #1a3b8b; font-weight: 700; margin-bottom: 6px; line-height: 1.4; }
+        .skill-card-box p { font-size: 11.5px; color: #666; line-height: 1.5; }
 
-        /* BARU: MENYELARASKAN SECTIION RIWAYAT SAMA PERSIS DENGAN DENTAL HYGIENE/WHITENING INDEX (2 KOLOM BESAR) */
+        /* UPDATE: MENAMBAHKAN TAKIK (CLIP-PATH DIAGONAL) PADA SECTION RIWAYAT KEAHLIAN */
         .history-section-wrapper {
-            width: 100%;
+            width: 100vw; /* Membuka lebar ke ujung browser */
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
             background-color: #1a3b8b;
             color: #ffffff;
-            padding: 70px 5%;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(26, 59, 139, 0.12);
+            padding: 160px 12% 140px 12%;
+            /* Efek Takik Sempurna Sejajar Index */
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+            z-index: 3;
         }
 
         .history-horizontal-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            text-align: center;
+            gap: 70px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
         }
 
         .history-column-box {
             display: flex;
             flex-direction: column;
-            align-items: center;
         }
 
         .history-column-box h2 {
             font-family: 'Caveat', cursive;
-            font-size: 46px;
+            font-size: 44px;
             color: #ffffff;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
 
         .history-column-box ul {
             list-style: none;
-            max-width: 440px;
+            max-width: 460px;
         }
 
         .history-column-box ul li {
-            font-size: 14px;
+            font-size: 13.5px;
             color: #cbd5e1;
             line-height: 1.8;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             position: relative;
+            padding-left: 15px;
+        }
+        .history-column-box ul li::before {
+            content: "•";
+            color: #4a90e2;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            top: -2px;
         }
 
         /* FOOTER DEEP NAVY */
-        footer { background-color: #102252; color: #cbd5e1; padding: 60px 8% 30px 8%; font-size: 13px; width: 100%; margin-top: 60px; }
-        .footer-container { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; margin-bottom: 40px; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        footer { background-color: #102252; color: #cbd5e1; padding: 60px 8% 30px 8%; font-size: 13px; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; z-index: 3; }
+        .footer-container { max-width: 1100px; margin: 0 auto 40px auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; }
+        .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
 
         @media (max-width: 1200px) { .skills-grid-layout { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 992px) {
@@ -147,21 +172,32 @@
             .logo-center-item { order: -1; margin-bottom: 10px; }
             .about-container-vertical { padding-top: 150px; }
             .skills-grid-layout { grid-template-columns: 1fr; }
-            .history-horizontal-layout { grid-template-columns: 1fr; gap: 45px; }
-            .footer-container { grid-template-columns: 1fr; }
+            .history-section-wrapper { padding: 100px 5% 60px 5%; clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%); }
+            .history-horizontal-layout { grid-template-columns: 1fr; gap: 45px; text-align: center; }
+            .history-horizontal-layout ul li { padding-left: 0; }
+            .history-horizontal-layout ul li::before { display: none; }
+            .footer-container { grid-template-columns: 1fr; padding: 0 20px; }
+            .footer-bottom { padding: 25px 20px 0 20px; }
         }
     </style>
 </head>
 <body>
 
     <!-- Aset Banyak Polkadot Halaman About -->
-    <div class="dot dot-blue-1"></div>
-    <div class="dot dot-blue-2"></div>
-    <div class="dot dot-blue-3"></div>
-    <div class="dot dot-blue-4"></div>
-    <div class="dot dot-pink-1"></div>
-    <div class="dot dot-pink-2"></div>
-    <div class="dot dot-pink-3"></div>
+    <div class="dot dot-b1"></div>
+    <div class="dot dot-b2"></div>
+    <div class="dot dot-b3"></div>
+    <div class="dot dot-b4"></div>
+    <div class="dot dot-b5"></div>
+    <div class="dot dot-b6"></div>
+    <div class="dot dot-b7"></div>
+    <div class="dot dot-p1"></div>
+    <div class="dot dot-p2"></div>
+    <div class="dot dot-p3"></div>
+    <div class="dot dot-p4"></div>
+    <div class="dot dot-p5"></div>
+    <div class="dot dot-p6"></div>
+    <div class="dot dot-p7"></div>
 
     <header>
         <nav>
@@ -192,7 +228,7 @@
         </section>
 
         <p class="profile-description-text">
-            Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif[cite: 3].
+            Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.
         </p>
         
         <a href="https://www.instagram.com/drg.yulipanjaitan/" target="_blank" class="btn-portfolio">
@@ -245,25 +281,23 @@
             </div>
         </section>
         
-        <!-- UPDATE: KINI RIWAYAT SUDAH SEJAJAR 2 KOLOM BESAR IDENTIK SEPERTI DI INDEX -->
+        <!-- UPDATE: KINI SECTION RIWAYAT SUDAH DIBERIKAN TAKIK BIDANG MIRING (CLIP-PATH) SEJAJAR INDEX -->
         <section class="history-section-wrapper">
             <div class="history-horizontal-layout">
                 
-                <!-- KOLOM KIRI: Riwayat Pendidikan -->
                 <div class="history-column-box">
                     <h2>Education History</h2>
                     <ul>
-                        <li>Sarjana Kedokteran Gigi (2018) - Universitas Sumatera Utara[cite: 3]</li>
-                        <li>Profesi Dokter Gigi (2021) - Universitas Sumatera Utara[cite: 3]</li>
+                        <li>Sarjana Kedokteran Gigi (2018) - Universitas Sumatera Utara</li>
+                        <li>Profesi Dokter Gigi (2021) - Universitas Sumatera Utara</li>
                     </ul>
                 </div>
                 
-                <!-- KOLOM KANAN: Pengalaman Praktik -->
                 <div class="history-column-box">
                     <h2>Clinical Experience</h2>
                     <ul>
-                        <li>Dokter Gigi Praktisi di Vera Dental Care (2022 s.d. 2025, Medan)[cite: 3]</li>
-                        <li>Dokter Gigi Praktisi di Lanera Dental Care & TP Dental (Batam)[cite: 3]</li>
+                        <li>Dokter Gigi Praktisi di Vera Dental Care (2022 s.d. 2025, Medan)</li>
+                        <li>Dokter Gigi Praktisi di Lanera Dental Care & TP Dental (Batam)</li>
                     </ul>
                 </div>
                 
@@ -276,23 +310,23 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>drg. Yuli Kartilla Panjaitan</h3>
-                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam[cite: 3].</p>
+                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam.</p>
                 <div class="footer-socials-link">
-                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram"></i> @laneradentalcare[cite: 3]</a>
-                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram"></i> @tpdentalbatam[cite: 3]</a>
+                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram"></i> @laneradentalcare</a>
+                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram"></i> @tpdentalbatam</a>
                 </div>
             </div>
             <div class="footer-links">
                 <h4>Navigation</h4>
                 <ul>
-                    <li><a href="index.html">Home[cite: 3]</a></li>
-                    <li><a href="about.html">About Me[cite: 3]</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.[cite: 3]</p>
-            <p><i class="fa-solid fa-user-shield"></i> Seluruh data format reservasi medis bersifat rahasia.[cite: 3]</p>
+            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p><i class="fa-solid fa-user-shield"></i> Seluruh data format reservasi medis bersifat rahasia.</p>
         </div>
     </footer>
 
