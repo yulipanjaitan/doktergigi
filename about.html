@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - drg. Yuli Kartilla Panjaitan</title>
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Profil profesional dan riwayat akademis klinis drg. Yuli Kartilla Panjaitan, praktisi kedokteran gigi modern di Kota Batam.">
     <meta property="og:title" content="About Me - drg. Yuli Kartilla Panjaitan">
     <meta property="og:description" content="Kenali lebih dekat profil, keahlian dental medis, serta riwayat pengalaman dari drg. Yuli Kartilla Panjaitan.">
@@ -26,40 +25,36 @@
             transition: opacity 0.4s ease-in-out; 
         }
         
-        /* HEADER & NAVIGATION (Identik & Selaras dengan index.html) */
+        /* HEADER LEBIH RAPAT */
         header {
             position: fixed; width: 100%; z-index: 1000; top: 0; left: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); border-bottom: 1px solid #f0f0f0; padding: 15px 5%;
         }
-        nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
-        nav ul { display: flex; list-style: none; align-items: center; width: 100%; justify-content: space-between; }
+        nav { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+        nav ul { display: flex; list-style: none; align-items: center; width: 100%; justify-content: center; gap: 25px; }
         nav ul li { display: flex; align-items: center; }
         nav ul li a { text-decoration: none; color: #1a3b8b; font-size: 14px; font-weight: 600; transition: color 0.2s ease; white-space: nowrap; }
         nav ul li a:hover, nav ul li a.active { color: #4a90e2; }
 
-        .logo-center-item { display: flex; align-items: center; font-weight: 800; font-size: 16px; color: #1a3b8b !important; gap: 8px; text-transform: uppercase; }
+        .logo-center-item { display: flex; align-items: center; font-weight: 800; font-size: 16px; color: #1a3b8b !important; gap: 8px; text-transform: uppercase; margin: 0 15px; }
         .logo-center-item i { color: #4a90e2; font-size: 22px; }
 
         .menu-toggle { display: none !important; font-size: 24px; cursor: pointer; color: #1a3b8b; }
 
-        /* ANIMASI FLOATING POLKADOT (Sama dengan index.html) */
-        @keyframes floatSlow {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(10deg); }
-        }
-        @keyframes floatFast {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-25px) rotate(-15deg); }
-        }
+        /* FLOATING POLKADOT (DIPERBANYAK) */
+        .dot { position: absolute; border-radius: 50%; box-shadow: 0 6px 15px rgba(0,0,0,0.04); pointer-events: none; z-index: -1; }
+        .dot-blue-1 { width: 35px; height: 35px; background-color: #cbdcf2; top: 15%; left: 8%; animation: floatSlow 5s infinite ease-in-out; }
+        .dot-blue-2 { width: 22px; height: 22px; background-color: #4a90e2; top: 40%; left: 88%; opacity: 0.6; animation: floatFast 4s infinite ease-in-out; }
+        .dot-blue-3 { width: 14px; height: 14px; background-color: #1a3b8b; top: 70%; left: 5%; opacity: 0.4; animation: floatSlow 6s infinite ease-in-out; }
+        .dot-blue-4 { width: 26px; height: 26px; background-color: #cbdcf2; top: 65%; left: 82%; opacity: 0.5; animation: floatSlow 4.8s infinite ease-in-out; }
+        
+        .dot-pink-1 { width: 24px; height: 24px; background-color: #ff789e; top: 18%; left: 80%; animation: floatFast 4.5s infinite ease-in-out; }
+        .dot-pink-2 { width: 18px; height: 18px; background-color: #ff789e; top: 52%; left: 10%; animation: floatSlow 5.5s infinite ease-in-out; }
+        .dot-pink-3 { width: 16px; height: 16px; background-color: #ff789e; top: 32%; left: 74%; animation: floatFast 3.8s infinite ease-in-out; }
 
-        /* Floating Polkadot Background Elements */
-        .dot { position: absolute; border-radius: 50%; box-shadow: 0 6px 15px rgba(0,0,0,0.05); pointer-events: none; }
-        .dot-blue-lg { width: 35px; height: 35px; background-color: #cbdcf2; top: 15%; left: 10%; animation: floatSlow 5s infinite ease-in-out; }
-        .dot-blue-md { width: 22px; height: 22px; background-color: #4a90e2; top: 45%; left: 85%; opacity: 0.6; animation: floatFast 4s infinite ease-in-out; }
-        .dot-blue-sm { width: 14px; height: 14px; background-color: #1a3b8b; top: 75%; left: 8%; opacity: 0.4; animation: floatSlow 6s infinite ease-in-out; }
-        .dot-pink-lg { width: 24px; height: 24px; background-color: #ff789e; top: 22%; left: 82%; animation: floatFast 4.5s infinite ease-in-out; }
-        .dot-pink-md { width: 18px; height: 18px; background-color: #ff789e; top: 60%; left: 12%; animation: floatSlow 5.5s infinite ease-in-out; }
+        @keyframes floatSlow { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(10deg); } }
+        @keyframes floatFast { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-25px) rotate(-15deg); } }
 
-        /* STRUKTUR SATU KOLOM VERTIKAL BARU */
+        /* STRUKTUR HALAMAN */
         .about-container-vertical { 
             max-width: 1100px; 
             margin: 0 auto; 
@@ -70,138 +65,80 @@
             position: relative;
         }
 
-        /* 1. SECTIION ATAS: Nama Dokter & Subtitle */
-        .profile-header-block {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .profile-header-block h2 { 
-            font-size: 38px; 
-            color: #1a3b8b; 
-            font-weight: 800; 
-            margin-bottom: 5px;
-        }
-        .profile-header-block .subtitle { 
-            font-family: 'Caveat', cursive; 
-            font-size: 28px; 
-            color: #4a90e2; 
-            font-weight: 700; 
-        }
+        .profile-header-block { text-align: center; margin-bottom: 30px; }
+        .profile-header-block h2 { font-size: 38px; color: #1a3b8b; font-weight: 800; margin-bottom: 5px; }
+        .profile-header-block .subtitle { font-family: 'Caveat', cursive; font-size: 28px; color: #4a90e2; font-weight: 700; }
 
-        /* 2. SECTION KEDUA: Foto Dokter Berada di Bawah Nama */
-        .profile-image-center-box {
-            width: 100%;
-            max-width: 450px;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(26, 59, 139, 0.1);
-            margin-bottom: 40px;
-            transition: transform 0.4s ease;
-        }
-        .profile-image-center-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-        .profile-image-center-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(74, 144, 226, 0.18);
-        }
+        .profile-image-center-box { width: 100%; max-width: 450px; border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(26, 59, 139, 0.1); margin-bottom: 40px; }
+        .profile-image-center-box img { width: 100%; height: auto; display: block; object-fit: cover; }
 
-        /* Deskripsi Singkat Profil */
-        .profile-description-text {
-            text-align: center;
-            font-size: 15px;
-            color: #555;
-            line-height: 1.8;
-            max-width: 750px;
-            margin-bottom: 30px;
-        }
+        .profile-description-text { text-align: center; font-size: 15px; color: #555; line-height: 1.8; max-width: 750px; margin-bottom: 30px; }
 
-        .btn-portfolio { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 8px; 
-            background-color: #1a3b8b; 
-            color: white; 
-            padding: 11px 24px; 
-            border-radius: 4px; 
-            text-decoration: none; 
-            font-weight: 600; 
-            font-size: 13px; 
-            margin-bottom: 60px;
-            transition: background-color 0.2s; 
-        }
+        .btn-portfolio { display: inline-flex; align-items: center; gap: 8px; background-color: #1a3b8b; color: white; padding: 11px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 13px; margin-bottom: 60px; }
         .btn-portfolio:hover { background-color: #4a90e2; }
 
-        /* 3. SECTION KETIGA: 8 Keahlian & Layanan Medis (Mengikuti Desain Utama) */
-        .skills-section-wrapper {
-            width: 100%;
-            margin-bottom: 60px;
-        }
-        .skills-title-main { 
-            font-size: 20px; 
-            color: #1a3b8b; 
-            font-weight: 800; 
-            margin-bottom: 25px; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-        }
+        /* KEAHLIAN & LAYANAN MEDIS SECTION (HORIZONTAL GRID) */
+        .skills-section-wrapper { width: 100%; margin-bottom: 80px; }
+        .skills-title-main { font-size: 20px; color: #1a3b8b; font-weight: 800; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; }
         .skills-title-main::after { content: ""; flex-grow: 1; height: 2px; background-color: #f0f4f8; }
         
-        .skills-grid-layout { 
-            display: grid; 
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 20px; 
-        }
-        .skill-card-box { 
-            background: #ffffff; 
-            padding: 22px 16px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02); 
-            border: 1px solid #eef2f6; 
-            transition: all 0.3s ease; 
-        }
-        .skill-card-box:hover { 
-            border-color: #4a90e2; 
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(26, 59, 139, 0.05);
-        }
+        .skills-grid-layout { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .skill-card-box { background: #ffffff; padding: 22px 16px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid #eef2f6; transition: all 0.3s ease; }
+        .skill-card-box:hover { border-color: #4a90e2; transform: translateY(-3px); }
         .skill-card-icon { font-size: 22px; color: #4a90e2; margin-bottom: 10px; }
         .skill-card-box h4 { font-size: 14px; color: #1a3b8b; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
         .skill-card-box p { font-size: 11.5px; color: #666; line-height: 1.6; }
 
-        /* 4. SECTION KEEMPAT: Riwayat Pendidikan & Pengalaman (Sisa Elemen) */
+        /* BARU: MENYELARASKAN SECTIION RIWAYAT SAMA PERSIS DENGAN DENTAL HYGIENE/WHITENING INDEX (2 KOLOM BESAR) */
         .history-section-wrapper {
             width: 100%;
+            background-color: #1a3b8b;
+            color: #ffffff;
+            padding: 70px 5%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(26, 59, 139, 0.12);
         }
-        .history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-        .history-block { background: #1a3b8b; color: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(26, 59, 139, 0.08); }
-        .history-block h3 { font-size: 16px; color: #ffffff; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 10px; }
-        .history-list { list-style: none; }
-        .history-item { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: 13px; color: #cbd5e1; line-height: 1.6; }
-        .history-item::before { content: "•"; color: #4a90e2; font-size: 18px; position: absolute; left: 0; top: -2px; }
+
+        .history-horizontal-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            text-align: center;
+        }
+
+        .history-column-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .history-column-box h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 46px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .history-column-box ul {
+            list-style: none;
+            max-width: 440px;
+        }
+
+        .history-column-box ul li {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            position: relative;
+        }
 
         /* FOOTER DEEP NAVY */
-        footer { background-color: #102252; color: #cbd5e1; padding: 60px 8% 30px 8%; font-size: 13px; width: 100%; margin-top: 40px; }
+        footer { background-color: #102252; color: #cbd5e1; padding: 60px 8% 30px 8%; font-size: 13px; width: 100%; margin-top: 60px; }
         .footer-container { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; margin-bottom: 40px; }
-        .footer-brand h3 { color: white; font-size: 18px; margin-bottom: 12px; }
-        .footer-socials-link a { color: #cbd5e1; text-decoration: none; display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 12.5px; }
-        .footer-socials-link a:hover { color: #4a90e2; }
-        .footer-links h4 { color: white; font-size: 14px; margin-bottom: 15px; text-transform: uppercase; }
-        .footer-links ul { list-style: none; }
-        .footer-links ul li { margin-bottom: 8px; }
-        .footer-links ul li a { color: #cbd5e1; text-decoration: none; }
-        .footer-links ul li a:hover { color: #4a90e2; }
-        
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; font-size: 11.5px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
 
-        /* MEDIA QUERIES RESPONSIVE TABLET & HP */
-        @media (max-width: 1200px) { 
-            .skills-grid-layout { grid-template-columns: repeat(2, 1fr); } 
-        }
+        @media (max-width: 1200px) { .skills-grid-layout { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 992px) {
             .menu-toggle { display: block !important; color: #1a3b8b; }
             nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff; padding: 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.05); gap: 12px; }
@@ -209,24 +146,23 @@
             nav ul li { margin: 0; justify-content: center; }
             .logo-center-item { order: -1; margin-bottom: 10px; }
             .about-container-vertical { padding-top: 150px; }
-            .profile-header-block h2 { font-size: 30px; }
             .skills-grid-layout { grid-template-columns: 1fr; }
-            .history-grid { grid-template-columns: 1fr; }
+            .history-horizontal-layout { grid-template-columns: 1fr; gap: 45px; }
             .footer-container { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; text-align: center; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Animasi Polkadot Mengambang Aktif di Background -->
-    <div class="dot dot-blue-lg"></div>
-    <div class="dot dot-blue-md"></div>
-    <div class="dot dot-blue-sm"></div>
-    <div class="dot dot-pink-lg"></div>
-    <div class="dot dot-pink-md"></div>
+    <!-- Aset Banyak Polkadot Halaman About -->
+    <div class="dot dot-blue-1"></div>
+    <div class="dot dot-blue-2"></div>
+    <div class="dot dot-blue-3"></div>
+    <div class="dot dot-blue-4"></div>
+    <div class="dot dot-pink-1"></div>
+    <div class="dot dot-pink-2"></div>
+    <div class="dot dot-pink-3"></div>
 
-    <!-- Header & Navigasi Selaras -->
     <header>
         <nav>
             <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
@@ -244,76 +180,63 @@
         </nav>
     </header>
 
-    <!-- WRAPPER UTAMA KONSEPTUAL VERTIKAL SATU KOLOM -->
     <main class="about-container-vertical">
         
-        <!-- 1. drg Yuli Panjaitan (Judul Paling Atas) -->
         <section class="profile-header-block">
             <h2>drg. Yuli Kartilla Panjaitan</h2>
             <div class="subtitle">Dokter Gigi Praktisi</div>
         </section>
         
-        <!-- 2. Foto drg Berada Tepat di Bawah Nama -->
         <section class="profile-image-center-box">
             <img src="drg-yuli.jpg" alt="Foto drg. Yuli Kartilla Panjaitan" onerror="this.src='https://via.placeholder.com/400x500?text=Foto+drg.+Yuli'">
         </section>
 
-        <!-- Deskripsi Ringkas Profil Medis -->
         <p class="profile-description-text">
-            Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif.
+            Saya adalah seorang dokter gigi profesional yang memberikan perawatan kesehatan gigi dan mulut dengan berfokus pada kenyamanan serta kepuasan pasien, saya aktif menerapkan standar klinis kedokteran gigi modern yang aman dan solutif[cite: 3].
         </p>
         
         <a href="https://www.instagram.com/drg.yulipanjaitan/" target="_blank" class="btn-portfolio">
             <i class="fa-solid fa-briefcase"></i> Lihat Portofolio
         </a>
         
-        <!-- 3. 8 Keahlian & Layanan Medis (Konsep Identik Halaman Index) -->
         <section class="skills-section-wrapper">
             <div class="skills-title-main">Keahlian & Layanan Medis</div>
             <div class="skills-grid-layout">
-                
                 <div class="skill-card-box">
                     <i class="fa-solid fa-teeth skill-card-icon"></i>
                     <h4>Pemasangan Behel (Ortodonti)</h4>
                     <p>Memperbaiki susunan gigi yg tidak rapi dan memperbaiki posisi rahang</p>
                 </div>
-                
                 <div class="skill-card-box">
                     <i class="fa-solid fa-wand-magic-sparkles skill-card-icon"></i>
                     <h4>Dental Bleaching</h4>
                     <p>Prosedur pemutihan gigi untuk membuat permukaan gigi tampak lebih putih natural</p>
                 </div>
-                
                 <div class="skill-card-box">
                     <i class="fa-solid fa-shield-halved skill-card-icon"></i>
                     <h4>Scaling</h4>
                     <p>Prosedur pembersihan karang gigi untuk menghindari risiko peradangan gusi dan bau mulut</p>
                 </div>
-                
                 <div class="skill-card-box">
                     <i class="fa-solid fa-tooth skill-card-icon"></i>
                     <h4>Restorasi gigi</h4>
                     <p>Prosedur penambalan pada gigi karies/ berlubang dengan menggunakan bahan resin komposit sewarna gigi</p>
                 </div>
-                
                 <div class="skill-card-box">
                     <i class="fa-solid fa-heart-pulse skill-card-icon"></i>
                     <h4>Perawatan Saluran Akar</h4>
                     <p>Prosedur perawatan gigi yang bertujuan untuk merawat gigi yang sudah terinfeksi dan menghilangkan abses gigi</p>
                 </div>
-                
                 <div class="skill-card-box">
                     <i class="fa-solid fa-scissors skill-card-icon"></i>
                     <h4>Pencabutan Gigi</h4>
                     <p>Prosedur medis untuk mengangkat gigi yang rusak, terinfeksi, atau tidak dapat dipertahankan lagi dengan tujuan menghentikan rasa sakit dan mencegah penyebaran infeksi lebih lanjut</p>
                 </div>
-                
                 <div class="skill-card-box">
                     <i class="fa-solid fa-cubes skill-card-icon"></i>
                     <h4>Gigi Tiruan (Palsu)</h4>
                     <p>Pembuatan protesa gigi lepasan maupun cekat untuk menggantikan fungsi fonetik dan estetika gigi yang tanggal.</p>
                 </div>
-                
                 <div class="skill-card-box">
                     <i class="fa-solid fa-child skill-card-icon"></i>
                     <h4>Dental Anak (Pedodonti)</h4>
@@ -322,54 +245,57 @@
             </div>
         </section>
         
-        <!-- 4. Sisa Elemen: Riwayat Pendidikan & Pengalaman Praktik -->
+        <!-- UPDATE: KINI RIWAYAT SUDAH SEJAJAR 2 KOLOM BESAR IDENTIK SEPERTI DI INDEX -->
         <section class="history-section-wrapper">
-            <div class="history-grid">
-                <div class="history-block">
-                    <h3><i class="fa-solid fa-graduation-cap"></i> Riwayat Pendidikan</h3>
-                    <ul class="history-list">
-                        <li class="history-item">Sarjana Kedokteran Gigi (2018) - Universitas Sumatera Utara</li>
-                        <li class="history-item">Profesi Dokter Gigi (2021) - Universitas Sumatera Utara</li>
+            <div class="history-horizontal-layout">
+                
+                <!-- KOLOM KIRI: Riwayat Pendidikan -->
+                <div class="history-column-box">
+                    <h2>Education History</h2>
+                    <ul>
+                        <li>Sarjana Kedokteran Gigi (2018) - Universitas Sumatera Utara[cite: 3]</li>
+                        <li>Profesi Dokter Gigi (2021) - Universitas Sumatera Utara[cite: 3]</li>
                     </ul>
                 </div>
-                <div class="history-block">
-                    <h3><i class="fa-solid fa-briefcase"></i> Pengalaman Praktik</h3>
-                    <ul class="history-list">
-                        <li class="history-item">Dokter Gigi Praktisi di Vera Dental Care (2022 s.d. 2025, Medan)</li>
-                        <li class="history-item">Dokter Gigi Praktisi di Lanera Dental Care & TP Dental (Batam)</li>
+                
+                <!-- KOLOM KANAN: Pengalaman Praktik -->
+                <div class="history-column-box">
+                    <h2>Clinical Experience</h2>
+                    <ul>
+                        <li>Dokter Gigi Praktisi di Vera Dental Care (2022 s.d. 2025, Medan)[cite: 3]</li>
+                        <li>Dokter Gigi Praktisi di Lanera Dental Care & TP Dental (Batam)[cite: 3]</li>
                     </ul>
                 </div>
+                
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER (Selaras Total) -->
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>drg. Yuli Kartilla Panjaitan</h3>
-                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam.</p>
+                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam[cite: 3].</p>
                 <div class="footer-socials-link">
-                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram"></i> @laneradentalcare</a>
-                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram"></i> @tpdentalbatam</a>
+                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram"></i> @laneradentalcare[cite: 3]</a>
+                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram"></i> @tpdentalbatam[cite: 3]</a>
                 </div>
             </div>
             <div class="footer-links">
                 <h4>Navigation</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="index.html">Home[cite: 3]</a></li>
+                    <li><a href="about.html">About Me[cite: 3]</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
-            <p><i class="fa-solid fa-user-shield"></i> Seluruh data format reservasi medis bersifat rahasia.</p>
+            <p>© 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.[cite: 3]</p>
+            <p><i class="fa-solid fa-user-shield"></i> Seluruh data format reservasi medis bersifat rahasia.[cite: 3]</p>
         </div>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => { document.body.style.opacity = '1'; });
         document.querySelectorAll('a').forEach(link => {
