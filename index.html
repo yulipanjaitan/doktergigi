@@ -10,7 +10,6 @@
     <meta property="og:description" content="Healthy Teeth, Beautiful Smile. Layanan dental modern terbaik di Kota Batam.">
     <meta property="og:type" content="website">
     
-    <!-- FAVICON: Menggunakan warna Soft Blue premium -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%234a90e2' d='M416 112c-35.3 0-64 28.7-64 64v51.2c0 23.4-12.2 44.9-32.3 56.8L272 312.6l-47.7-28.6c-20.1-12-32.3-33.5-32.3-56.8V176c0-35.3-28.7-64-64-64S64 140.7 64 176c0 86.8 52.3 162.7 128 193.3V432c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V369.3c75.7-30.6 128-106.5 128-193.3c0-35.3-28.7-64-64-64z'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
@@ -70,9 +69,14 @@
         }
 
         .logo i {
-            color: #4a90e2; /* Berubah menjadi Soft Blue */
+            color: #4a90e2;
             margin-right: 8px;
             font-size: 24px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav ul {
@@ -93,9 +97,8 @@
 
         nav ul li a:hover, nav ul li a.active { color: #4a90e2; }
 
-        /* TOMBOL BOOKING HARMONIS */
         .btn-booking-nav {
-            background-color: #4a90e2; /* Serasi dengan tema biru */
+            background-color: #4a90e2;
             color: white !important;
             padding: 8px 16px;
             border-radius: 4px;
@@ -104,7 +107,13 @@
         }
         .btn-booking-nav:hover { background-color: #1a3b8b; }
 
-        .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: #1a3b8b; }
+        /* FIX: Mengunci Hamburger Menu agar Sembunyi Total di Desktop */
+        .menu-toggle { 
+            display: none !important; 
+            font-size: 24px; 
+            cursor: pointer; 
+            color: #1a3b8b; 
+        }
 
         /* HERO SECTION */
         .hero-section {
@@ -114,7 +123,6 @@
             text-align: center;
         }
 
-        /* Floating Dots Background - Menggunakan Soft Blue & Pink khas gambar */
         .dot {
             position: absolute;
             border-radius: 50%;
@@ -142,7 +150,7 @@
         .hero-text .cursive-title {
             font-family: 'Caveat', cursive;
             font-size: 46px;
-            color: #4a90e2; /* Cursive menjadi warna biru muda serasi */
+            color: #4a90e2;
             font-weight: 700;
             margin-bottom: 30px;
             text-transform: none;
@@ -178,7 +186,7 @@
             color: #4a90e2;
         }
 
-        /* SECTION LAYANAN MEDIS (DIAGONAL NAVY BLUE) */
+        /* SECTION LAYANAN MEDIS */
         .services-diagonal-container {
             background-color: #1a3b8b;
             color: #ffffff;
@@ -199,7 +207,7 @@
         .services-diagonal-container .section-subtitle {
             font-family: 'Caveat', cursive;
             font-size: 28px;
-            color: #cbdcf2; /* Subtitle serasi dengan warna biru langit muda */
+            color: #cbdcf2;
             text-align: center;
             margin-bottom: 60px;
         }
@@ -449,9 +457,10 @@
             font-size: 11.5px;
         }
 
+        /* MEDIA QUERIES RESPONSIVE */
         @media (max-width: 992px) {
             header { padding: 15px 5%; }
-            .menu-toggle { display: block; }
+            .menu-toggle { display: block !important; } /* Tampil khusus di layar HP */
             nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff; padding: 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.05); }
             nav ul.active { display: flex; }
             nav ul li { margin: 8px 0; }
@@ -465,7 +474,6 @@
 </head>
 <body>
 
-    <!-- Bulatan Polkadot Latar Belakang Harmoniss -->
     <div class="dot dot-blue-lg"></div>
     <div class="dot dot-blue-md"></div>
     <div class="dot dot-blue-sm"></div>
@@ -492,7 +500,7 @@
         <div class="hero-text">
             <h1>#NoFilter</h1>
             <span class="cursive-title">For your white smile</span>
-            <p>Selamat datang di platform konsultasi resmi drg. Yuli Kartilla Panjaitan. Kami berkomitmen memberikan pelayanan dental modern terbaik dengan mengutamakan kenyamanan, keamanan, dan hasil yang estetis[cite: 3].</p>
+            <p>Selamat datang di platform konsultasi resmi drg. Yuli Kartilla Panjaitan. Kami berkomitmen memberikan pelayanan dental modern terbaik dengan mengutamakan kenyamanan, keamanan, dan hasil yang estetis.</p>
             
             <a href="#services-target" class="scroll-down-container">
                 Scroll down
@@ -510,48 +518,48 @@
             <div class="service-card">
                 <i class="fa-solid fa-tooth service-icon"></i>
                 <h3>Penambalan Estetik</h3>
-                <p>Restorasi gigi berlubang menggunakan bahan komposit sewarna gigi dengan hasil presisi dan natural[cite: 3].</p>
+                <p>Restorasi gigi berlubang menggunakan bahan komposit sewarna gigi dengan hasil presisi dan natural.</p>
             </div>
             <div class="service-card">
                 <i class="fa-solid fa-shield-halved service-icon"></i>
                 <h3>Dental Scaling</h3>
-                <p>Pembersihan karang gigi secara menyeluruh guna mencegah radang gusi dan masalah bau mulut[cite: 3].</p>
+                <p>Pembersihan karang gigi secara menyeluruh guna mencegah radang gusi dan masalah bau mulut.</p>
             </div>
             <div class="service-card">
                 <i class="fa-solid fa-wand-magic-sparkles service-icon"></i>
                 <h3>Esthetic Bleaching</h3>
-                <p>Mencerahkan warna gigi secara aman dan efektif untuk senyum putih alami yang lebih percaya diri[cite: 3].</p>
+                <p>Mencerahkan warna gigi secara aman dan efektif untuk senyum putih alami yang lebih percaya diri.</p>
             </div>
             <div class="service-card">
                 <i class="fa-solid fa-heart-pulse service-icon"></i>
                 <h3>Perawatan Saluran Akar</h3>
-                <p>Solusi komprehensif untuk menyelamatkan gigi yang mengalami infeksi atau kerusakan struktural dalam[cite: 3].</p>
+                <p>Solusi komprehensif untuk menyelamatkan gigi yang mengalami infeksi atau kerusakan struktural dalam.</p>
             </div>
         </div>
     </section>
 
     <section class="slider-section">
         <div class="hero-slider-container">
-            <div class="slide active" style="background-image: url('lanera-luar.jpg');"><div class="slide-caption">Eksterior Lanera Dental Care[cite: 3]</div></div>
-            <div class="slide" style="background-image: url('lanera-interior.jpg');"><div class="slide-caption">Interior Lanera Dental Care[cite: 3]</div></div>
-            <div class="slide" style="background-image: url('tp-dental-luar.jpg');"><div class="slide-caption">Eksterior TP Dental[cite: 3]</div></div>
-            <div class="slide" style="background-image: url('tp-dental-pintu.jpg');"><div class="slide-caption">Interior TP Dental[cite: 3]</div></div>
+            <div class="slide active" style="background-image: url('lanera-luar.jpg');"><div class="slide-caption">Eksterior Lanera Dental Care</div></div>
+            <div class="slide" style="background-image: url('lanera-interior.jpg');"><div class="slide-caption">Interior Lanera Dental Care</div></div>
+            <div class="slide" style="background-image: url('tp-dental-luar.jpg');"><div class="slide-caption">Eksterior TP Dental</div></div>
+            <div class="slide" style="background-image: url('tp-dental-pintu.jpg');"><div class="slide-caption">Interior TP Dental</div></div>
         </div>
     </section>
 
     <section class="locations-section" id="locations">
         <div class="locations-title-box">
             <h2>Locations & Schedules</h2>
-            <p>Practice Locations & Contact Info[cite: 3]</p>
+            <p>Practice Locations & Contact Info</p>
         </div>
         <div class="locations-grid">
             <div class="location-card">
                 <div>
                     <i class="fa-solid fa-hospital-user location-icon"></i>
                     <h3>Lanera Dental Care</h3>
-                    <h4><i class="fa-regular fa-clock"></i> Senin – Sabtu: 10.00 – 16.00 WIB[cite: 3]</h4>
-                    <p class="address-text"><strong>Cabang KBC:</strong> Ruko KBC Blok A3 No. 3 Batam Center, Belian, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29464[cite: 3]</p>
-                    <p class="address-text"><strong>Cabang Mitra Raya:</strong> Komplek No.3 Blok A, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461[cite: 3]</p>
+                    <h4><i class="fa-regular fa-clock"></i> Senin – Sabtu: 10.00 – 16.00 WIB</h4>
+                    <p class="address-text"><strong>Cabang KBC:</strong> Ruko KBC Blok A3 No. 3 Batam Center, Belian, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29464</p>
+                    <p class="address-text"><strong>Cabang Mitra Raya:</strong> Komplek No.3 Blok A, Tlk. Tering, Kec. Batam Kota, Kota Batam, Kepulauan Riau 29461</p>
                 </div>
                 <div class="card-buttons">
                     <button class="card-btn" onclick="openWhatsApp('628121646224', 'Halo Lanera Dental Care, saya ingin membuat janji temu dengan drg. Yuli.')"><i class="fa-brands fa-whatsapp"></i> Admin 1</button>
@@ -565,8 +573,8 @@
                 <div>
                     <i class="fa-solid fa-house-medical-flag location-icon"></i>
                     <h3>TP Dental</h3>
-                    <h4><i class="fa-regular fa-clock"></i> Senin – Sabtu: 16.00 – 18.30 WIB[cite: 3]</h4>
-                    <p class="address-text"><strong>Alamat:</strong> Jl. Komp. Bumi Indah Blk. D No. 6, Lubuk Baja Kota, Kec. Lubuk Baja, Kota Batam, Kepulauan Riau 29444 (Belakang Bank BRI)[cite: 3]</p>
+                    <h4><i class="fa-regular fa-clock"></i> Senin – Sabtu: 16.00 – 18.30 WIB</h4>
+                    <p class="address-text"><strong>Alamat:</strong> Jl. Komp. Bumi Indah Blk. D No. 6, Lubuk Baja Kota, Kec. Lubuk Baja, Kota Batam, Kepulauan Riau 29444 (Belakang Bank BRI)</p>
                 </div>
                 <div class="card-buttons">
                     <button class="card-btn" onclick="openWhatsApp('6281373091545', 'Halo TP Dental, saya ingin menjadwalkan kunjungan ke drg. Yuli sore ini.')"><i class="fa-brands fa-whatsapp"></i> Chat Admin</button>
@@ -582,11 +590,11 @@
             <h2><i class="fa-solid fa-book-medical" style="color: #4a90e2;"></i> Panduan Pendaftaran</h2>
             <div class="modal-step">
                 <div class="step-number">1</div>
-                <div class="step-text"><h4>Pilih Lokasi & Jadwal Praktik</h4><p>Tentukan klinik pilihan Anda berdasarkan lokasi terdekat serta jam operasional drg. Yuli[cite: 3].</p></div>
+                <div class="step-text"><h4>Pilih Lokasi & Jadwal Praktik</h4><p>Tentukan klinik pilihan Anda berdasarkan lokasi terdekat serta jam operasional drg. Yuli.</p></div>
             </div>
             <div class="modal-step">
                 <div class="step-number">2</div>
-                <div class="step-text"><h4>Hubungi Kontak Admin</h4><p>Klik tombol Admin klinik untuk langsung dialihkan ke ruang obrolan WhatsApp[cite: 3].</p></div>
+                <div class="step-text"><h4>Hubungi Kontak Admin</h4><p>Klik tombol Admin klinik untuk langsung dialihkan ke ruang obrolan WhatsApp.</p></div>
             </div>
             <div class="modal-step">
                 <div class="step-number">3</div>
@@ -606,23 +614,23 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>drg. Yuli Kartilla Panjaitan</h3>
-                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam[cite: 3].</p>
+                <p>Layanan konsultasi dan perawatan gigi profesional di Kota Batam.</p>
                 <div class="footer-socials-link">
-                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram"></i> @laneradentalcare[cite: 3]</a>
-                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram"></i> @tpdentalbatam[cite: 3]</a>
+                    <a href="https://www.instagram.com/laneradentalcare/?hl=id" target="_blank"><i class="fa-brands fa-instagram"></i> @laneradentalcare</a>
+                    <a href="https://www.instagram.com/tpdentalbatam/" target="_blank"><i class="fa-brands fa-instagram"></i> @tpdentalbatam</a>
                 </div>
             </div>
             <div class="footer-links">
                 <h4>Navigation</h4>
                 <ul>
-                    <li><a href="index.html">Home[cite: 3]</a></li>
-                    <li><a href="about.html">About Me[cite: 3]</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.[cite: 3]</p>
-            <p><i class="fa-solid fa-user-shield"></i> Seluruh data format reservasi medis bersifat rahasia.[cite: 3]</p>
+            <p>&copy; 2026 drg. Yuli Kartilla Panjaitan. All Rights Reserved.</p>
+            <p><i class="fa-solid fa-user-shield"></i> Seluruh data format reservasi medis bersifat rahasia.</p>
         </div>
     </footer>
 
